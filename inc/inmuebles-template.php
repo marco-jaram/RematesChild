@@ -42,7 +42,7 @@ if ($query->have_posts()) :
                 </div>
                 <div class="inmueble-info">
                     <h2><?php the_title(); ?></h2>
-                    <p class="precio">USD <?php echo esc_html($precio); ?></p>
+                    <p class="precio">$ <?php echo esc_html($precio); ?></p>
                     <p class="ubicacion"><?php echo esc_html($ubicacion); ?></p>
                     <p class="detalles">
                         <?php echo esc_html($tamano); ?> m² tot. | 
