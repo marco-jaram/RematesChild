@@ -2,33 +2,170 @@
 Theme Name: GeneratePress Child
 Template: generatepress
 */
-.entry-title{
-    color: red;
+
+/* ESTILOS INMUEBLES */
+/* ESTILOS INMUEBLES */
+/* ESTILOS INMUEBLES */
+body {
+    background-color: white;
 }
 
-.inmuebles-grid,
-.vehiculos-grid,
-.maquinas-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+.inmuebles-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.entry-thumbnail img {
+.inmueble-card {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.inmueble-card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.inmueble-imagen {
+    overflow: hidden;
+}
+
+.inmueble-imagen img {
     width: 100%;
     height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
-.read-more {
-    display: inline-block;
+.inmueble-card:hover .inmueble-imagen img {
+    transform: scale(1.05);
+}
+
+.inmueble-info {
+    padding: 15px;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.inmueble-card:hover .inmueble-info {
+    background-color: #f8f8f8;
+}
+
+.inmueble-info h2 {
+    margin-top: 0;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.inmueble-card:hover .inmueble-info h2 {
+    color: #007bff;
+}
+
+.precio {
+    font-weight: bold;
+    color: #1b1a1a;
+}
+
+.ubicacion {
+    color: #666;
+}
+
+.detalles {
+    font-size: 0.9em;
+    color: #888;
+}
+
+.descripcion {
     margin-top: 10px;
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
+    font-size: 0.9em;
 }
 
-.read-more:hover {
-    background-color: #0056b3;
+.fecha-remate {
+    margin-top: 10px;
+    font-style: italic;
+    color: #f4f8f4;
+    padding: 15px;
+    background: -webkit-linear-gradient(90deg, #030a68, #558bd1);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(90deg, #030a68, #558bd1);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
+/* Estilos para pantallas grandes */
+@media screen and (min-width: 768px) {
+    .inmueble-card {
+        flex-direction: row;
+    }
+
+    .inmueble-imagen {
+        flex: 0 0 40%;
+        max-width: 40%;
+    }
+
+    .inmueble-imagen img {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .inmueble-info {
+        flex: 0 0 60%;
+        max-width: 60%;
+    }
+}
+
+/* Efecto de carga escalonada */
+.inmueble-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.inmueble-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.inmueble-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.inmueble-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.inmueble-card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+/* ... y así sucesivamente si tienes más cards */
+.inmueble-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.inmueble-card-link:hover {
+    text-decoration: none;
+}
+
+.inmueble-card {
+    /* ... (estilos previos) ... */
+    cursor: pointer;
+}
+
+/* FIN ESTILOS INMUEBLES */
+/* ESTILOS INMUEBLES */
+/* ESTILOS INMUEBLES */
