@@ -21,7 +21,7 @@ body {
     flex-direction: column;
     margin-bottom: 30px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+   
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
@@ -64,7 +64,7 @@ body {
 }
 
 .inmueble-card:hover .inmueble-info {
-    background-color: #f8f8f8;
+    background-color: #ffffff7c;
 }
 
 .inmueble-info h2 {
@@ -75,6 +75,7 @@ body {
 
 .inmueble-card:hover .inmueble-info h2 {
     color: #007bff;
+   
 }
 
 .precio {
@@ -99,12 +100,9 @@ body {
 .fecha-remate {
     margin-top: 10px;
     font-style: italic;
-    color: #f4f8f4;
+    color:  #00bf63;
     padding: 15px;
-    background: -webkit-linear-gradient(90deg, #030a68, #558bd1);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(90deg, #030a68, #558bd1);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
 }
 
 /* Estilos para pantallas grandes */
@@ -169,3 +167,52 @@ body {
 /* FIN ESTILOS INMUEBLES */
 /* ESTILOS INMUEBLES */
 /* ESTILOS INMUEBLES */
+
+
+/* CABECERA */
+.site-header{
+    border-bottom: 1px solid #cef7cb;
+}
+.inmuebles-container{
+    padding-top: 50px;
+}
+.main-navigation .main-nav ul li[class*="current-menu-"] > a {
+    color: #00bf63;
+  }
+  .inmueble-card:hover .inmueble-info h2 {
+    color:  #00bf63;
+  }
+  /* FIN CABECERA */
+
+  /* ASIDE IZQUIERDO */
+  /* Centrar el contenido del aside */
+/* Reducir el espacio entre el sidebar y el contenido principal */
+
+.inside-left-sidebar {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Ajustar el ancho del contenido principal y el sidebar si es necesario */
+@media (min-width: 769px) {
+    .content-area {
+        /* width: 75% !important;  */
+    }
+
+    #left-sidebar {
+        width: 20% !important; /* Ajusta este valor según necesites */
+    }
+    .is-right-sidebar{
+        width: 20%;
+    }
+    .site-content .content-area {
+        width: 60%;
+      }
+}
+
+/* Asegurar que la imagen del sidebar se ajuste correctamente */
+.inside-left-sidebar .widget_media_image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
