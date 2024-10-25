@@ -71,6 +71,12 @@ body {
     background-color: #fff;
     transition: background-color 0.3s ease;
 }
+.inmueble-info .institucion-subastadora {
+    font-size: 0.9em;
+    color: #00bf63;
+    margin: 5px 0;
+    font-weight: 500;
+}
 
 .inmueble-card:hover .inmueble-info {
     background-color: #ffffff7c;
@@ -378,3 +384,123 @@ body {
             grid-template-columns: 1fr;
         }
     }
+
+
+/* VEHICULOS */
+/* VEHICULOS */
+/* VEHICULOS */
+/* VEHICULOS */
+
+.vehiculos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.vehiculo-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.vehiculo-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.vehiculo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.vehiculo-imagen {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.vehiculo-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.vehiculo-info {
+    padding: 15px;
+}
+
+.vehiculo-info h2 {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.institucion-subastadora {
+    color: #666;
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
+.origen-lote {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    color: #555;
+    margin: 5px 0;
+}
+
+.precio {
+    font-size: 1.3em;
+    color: #2c3e50;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.detalles-principales {
+    margin: 10px 0;
+    font-size: 0.95em;
+}
+
+.estado {
+    background: #f8f9fa;
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.descripcion-corta {
+    font-size: 0.9em;
+    color: #666;
+    margin: 10px 0;
+    line-height: 1.4;
+}
+
+.caracteristicas ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.caracteristicas li {
+    font-size: 0.85em;
+    color: #555;
+    padding: 2px 0;
+}
+
+@media (max-width: 768px) {
+    .vehiculos-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* FIN VEHICULOS */
+/* VEHICULOS */
+/* VEHICULOS */
+/* VEHICULOS */

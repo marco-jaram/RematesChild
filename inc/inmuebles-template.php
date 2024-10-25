@@ -5,21 +5,21 @@
  * Este template muestra todas las entradas de inmuebles en forma de cards responsive y enlazadas.
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
 get_header(); ?>
 
-<div <?php generate_do_attr( 'content' ); ?>>
-    <main <?php generate_do_attr( 'main' ); ?>>
+<div <?php generate_do_attr('content'); ?>>
+    <main <?php generate_do_attr('main'); ?>>
         <?php
         /**
          * generate_before_main_content hook.
          *
          * @since 0.1
          */
-        do_action( 'generate_before_main_content' );
+        do_action('generate_before_main_content');
 
         // Argumentos para la consulta de inmuebles
         $args = array(
@@ -30,10 +30,12 @@ get_header(); ?>
         $query = new WP_Query($args);
 
         // El loop
-        if ($query->have_posts()) :
+        if ($query->have_posts()):
             echo '<div class="inmuebles-container">';
-            while ($query->have_posts()) : $query->the_post();
+            while ($query->have_posts()):
+                $query->the_post();
                 // Obtener los campos personalizados
+                $institucion_subastadora = get_post_meta(get_the_ID(), '_inmueble_institucion_subastadora', true);
                 $precio = get_post_meta(get_the_ID(), '_inmueble_precio', true);
                 $ubicacion = get_post_meta(get_the_ID(), '_inmueble_ubicacion', true);
                 $tamano = get_post_meta(get_the_ID(), '_inmueble_tamano', true);
@@ -51,7 +53,7 @@ get_header(); ?>
                 <a href="<?php the_permalink(); ?>" class="inmueble-card-link">
                     <div class="inmueble-card">
                         <div class="inmueble-imagen">
-                            <?php 
+                            <?php
                             if (has_post_thumbnail()) {
                                 the_post_thumbnail('medium_large');
                             } else {
@@ -61,24 +63,27 @@ get_header(); ?>
                         </div>
                         <div class="inmueble-info">
                             <h2><?php the_title(); ?></h2>
+                            <?php if ($institucion_subastadora): ?>
+                                <p class="institucion-subastadora"><?php echo esc_html($institucion_subastadora); ?></p>
+                            <?php endif; ?>
                             <p class="precio">$ <?php echo esc_html($precio); ?></p>
                             <p class="ubicacion"><?php echo esc_html($ubicacion); ?></p>
                             <p class="detalles">
-                                <?php echo esc_html($tamano); ?> m² tot. | 
-                                <?php echo esc_html($num_recamaras); ?> rec. | 
-                                <?php echo esc_html($num_banos); ?> baño | 
+                                <?php echo esc_html($tamano); ?> m² tot. |
+                                <?php echo esc_html($num_recamaras); ?> rec. |
+                                <?php echo esc_html($num_banos); ?> baño |
                                 <?php echo esc_html($estacionamiento); ?> estac.
                             </p>
                             <p class="descripcion"><?php echo wp_trim_words(get_the_content(), 20); ?></p>
-                            <p class="fecha-remate">Fecha de remate: <?php echo esc_html($fecha_remate); ?></p>
+                            <p class="fecha-remate">Fecha de subasta: <?php echo esc_html($fecha_remate); ?></p>
                         </div>
                     </div>
                 </a>
-            <?php
+                <?php
             endwhile;
             echo '</div>';
             wp_reset_postdata();
-        else :
+        else:
             echo '<p>No se encontraron inmuebles.</p>';
         endif;
 
@@ -87,7 +92,7 @@ get_header(); ?>
          *
          * @since 0.1
          */
-        do_action( 'generate_after_main_content' );
+        do_action('generate_after_main_content');
         ?>
     </main>
 </div>
@@ -98,7 +103,7 @@ get_header(); ?>
  *
  * @since 2.0
  */
-do_action( 'generate_after_primary_content_area' );
+do_action('generate_after_primary_content_area');
 
 generate_construct_sidebars();
 

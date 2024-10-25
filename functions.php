@@ -12,8 +12,6 @@ add_filter('generate_copyright', 'tu_custom_copyright');
 function tu_custom_copyright()
 {
     ?>
-    Remates Tijuana | 2024
+    Subastas | 2024
     <?php
 }
-
-
